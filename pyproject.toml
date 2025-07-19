@@ -1,0 +1,24 @@
+[project]
+name = "qaguru-autotest-lesson-15"
+version = "0.1.0"
+description = "Домашняя работа к уроку 15 https://school.qa.guru/pl/teach/control/lesson/view?id=340849978"
+authors = [
+    {name = "Viacheslav Suchkov",email = "iexploudi@gmail.com"}
+]
+readme = "README.md"
+requires-python = ">=3.13,<4.0"
+dependencies = [
+    "selene (==2.0.0rc9)",
+    "pytest (>=8.4.1,<9.0.0)"
+]
+
+[tool.pytest.ini_options]
+addopts="-l -v --durations=10 "
+markers=[
+    "fast: Маркируем тесты длящиеся менее пяти секунд",
+    "slow: Тесты, которые длятся больше пяти секунд"
+]
+
+[build-system]
+requires = ["poetry-core>=2.0.0,<3.0.0"]
+build-backend = "poetry.core.masonry.api"
